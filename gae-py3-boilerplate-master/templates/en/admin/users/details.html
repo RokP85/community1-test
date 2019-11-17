@@ -1,0 +1,26 @@
+{% extends lang+"/admin/base.html" %}
+
+{% block title %}User details{% endblock title %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('admin.users.users_list') }}">Users</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ selected_user.first_name }} {{ selected_user.last_name }}</li>
+  </ol>
+</nav>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">User details</h6>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ selected_user.first_name }} {{ selected_user.last_name }}</h5>
+        <ul class="card-text">
+            <li><strong>Email:</strong> {{selected_user.email_address}}</li>
+            <li><strong>Admin:</strong> {{selected_user.admin}}</li>
+            <li><strong>Created:</strong> {{selected_user.created}}</li>
+        </ul>
+    </div>
+</div>
+{% endblock content %}

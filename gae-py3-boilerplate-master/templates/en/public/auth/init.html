@@ -1,0 +1,27 @@
+{% extends lang+"/public/base.html" %}
+
+{% block title %}Web app initialization{% endblock title %}
+
+{% block content %}
+<h1>Web app initialization</h1>
+
+<p>If you're seeing this page, your web app does not have any admin set up yet. Use this page to make yourself an admin.</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group" id="sendGridDiv">
+                <label for="sendGridKeyInput">Enter SendGrid API Key</label>
+                <input type="text" class="form-control" id="sendGridKeyInput" placeholder="Enter SendGrid API Key" name="init-sendgrid" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput">Your email address</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email address" name="init-email" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
